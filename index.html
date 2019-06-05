@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<div class="game">
+		<h1 class="text-center">POINTS</h1>
+		<h1 class="points text-center">0</h1>
+		<div class="container">
+			<div class="row">
+				<div class="col-3 border" style="height: 300px; background: #fbbb11">
+					<img class="jakethedog w-75" src="jake.png" alt="" style="display: none">
+					<img class="iceking w-75" src="Ice_King.png" alt="" style="display: none">
+				</div>
+				<div class="col-3 border" style="height: 300px; background: #fbbb11">
+					<img class="jakethedog" src="jake.png"  alt="" style="display: none">
+					<img class="iceking w-75" src="Ice_King.png" alt="" style="display: none">
+				</div>
+				<div class="col-3 border" style="height: 300px; background: #fbbb11">
+					<img class="jakethedog" src="jake.png"  alt="" style="display: none">
+					<img class="iceking w-75" src="Ice_King.png" alt="" style="display: none">
+				</div>
+				<div class="col-3 border" style="height: 300px; background: #fbbb11">
+					<img class="jakethedog" src="jake.png"  alt="" style="display: none">
+					<img class="iceking w-75" src="Ice_King.png" alt="" style="display: none">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-3 border" style="height: 300px; background: #fbbb11">
+					<img class="jakethedog" src="jake.png" alt="" style="display: none">
+					<img class="iceking w-75" src="Ice_King.png" alt="" style="display: none">
+				</div>
+				<div class="col-3 border" style="height: 300px; background: #fbbb11">
+					<img class="jakethedog" src="jake.png"  alt="" style="display: none">
+					<img class="iceking w-75" src="Ice_King.png" alt="" style="display: none">
+				</div>
+				<div class="col-3 border" style="height: 300px; background: #fbbb11">
+					<img class="jakethedog" src="jake.png"  alt="" style="display: none">
+					<img class="iceking w-75" src="Ice_King.png" alt="" style="display: none">
+				</div>
+				<div class="col-3 border" style="height: 300px; background: #fbbb11">
+					<img class="jakethedog" src="jake.png"  alt="" style="display: none">
+					<img class="iceking w-75" src="Ice_King.png" alt="" style="display: none">
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script>
+		
+		let jake = document.querySelectorAll(".jakethedog");
+
+		let iceking = document.querySelectorAll(".iceking");
+
+		let points = document.querySelector(".points");
+
+		let timerJake = function(){
+
+			let randJake = Math.random()*8;
+			let roundJake = Math.round(randJake);
+			jake[roundJake].style.display = "block";
+
+			let proverkaJake = function(){
+				jake[roundJake].style.display = "none";
+			}
+
+			setTimeout(proverkaJake,700);
+
+		}
+
+		setInterval(timerJake,1000);
+
+		let timerIceking = function(){
+
+			let randIceking = Math.random()*8;
+			let roundIceking = Math.round(randIceking);
+			iceking[roundIceking].style.display = "block";
+
+			let proverkaIceking = function(){
+				iceking[roundIceking].style.display = "none";
+			}
+
+			setTimeout(proverkaIceking,700);
+
+		}
+
+		setInterval(timerIceking,1000);
+
+		jake.onclick = function(){
+			for(points = 0; points<5; points = points + 1);
+		}
+		iceking.onclick = function(){
+			for(points = 0; points<20; points = points - 10);
+		}
+		if ( points == 5 ) {
+			alert("you win!");
+		}	
+		
+		if ( points == -20 ) {
+			alert("you lose!a");
+		}
+	</script>
+</body>
+</html>
